@@ -17,6 +17,9 @@ function General() {
               <label for="number">Number:</label>
               <input type="tel" id="number" name="user_num" />
             </li>
+            <li class="button">
+              <button type="submit">Submit</button>
+            </li>
           </ul>
         </fieldset>
       </form>
