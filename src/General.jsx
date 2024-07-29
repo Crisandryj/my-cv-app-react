@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 function General() {
+  const [status, setStatus] = useState("typing");
+  const [form, setForm] = useState({
+    name: "John Doe",
+    email: "JD@gmail.com",
+    number: "718-939-5555",
+  });
+
   return (
     <>
       <form action="">
@@ -6,18 +15,18 @@ function General() {
           <legend>General</legend>
           <ul>
             <li>
-              <label for="name">Name:</label>
+              <label htmlFor="name">Name:</label>
               <input type="text" id="name" name="user_name" />
             </li>
             <li>
-              <label for="mail">Email:</label>
+              <label htmlFor="mail">Email:</label>
               <input type="email" id="mail" name="user_email" />
             </li>
             <li>
-              <label for="number">Number:</label>
+              <label htmlFor="number">Number:</label>
               <input type="tel" id="number" name="user_num" />
             </li>
-            <li class="button">
+            <li className="button">
               <button type="submit">Submit</button>
             </li>
           </ul>
@@ -28,3 +37,8 @@ function General() {
 }
 
 export default General;
+
+//Add a conditional statement - if submitted show edit button
+//STATE
+//Track status of wheter form has been submitted
+//Save form inputs in object: Name,Email and Phone Number
