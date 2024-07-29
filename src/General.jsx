@@ -3,9 +3,9 @@ import { useState } from "react";
 function General() {
   const [status, setStatus] = useState("typing");
   const [form, setForm] = useState({
-    name: "John Doe",
-    email: "JD@gmail.com",
-    number: "718-939-5555",
+    name: "",
+    email: "",
+    number: "",
   });
 
   return (
@@ -16,15 +16,25 @@ function General() {
           <ul>
             <li>
               <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="user_name" />
+              <input type="text" id="name" name="user_name" value={form.name} />
             </li>
             <li>
               <label htmlFor="mail">Email:</label>
-              <input type="email" id="mail" name="user_email" />
+              <input
+                type="email"
+                id="mail"
+                name="user_email"
+                value={form.email}
+              />
             </li>
             <li>
               <label htmlFor="number">Number:</label>
-              <input type="tel" id="number" name="user_num" />
+              <input
+                type="tel"
+                id="number"
+                name="user_num"
+                value={form.number}
+              />
             </li>
             <li className="button">
               <button type="submit">Submit</button>
