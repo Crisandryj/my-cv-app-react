@@ -1,15 +1,17 @@
 import { useState } from "react";
 
 function General() {
+  //Track status of whether form has been submitted
   const [submitted, setSubmitted] = useState(false);
   //Save form inputs in object: Name,Email and Phone Number
   const [form, setForm] = useState({
-    name: "Enter Name",
-    email: "email@email.com",
-    number: "7185555555",
+    name: "",
+    email: "",
+    number: "",
   });
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     const myForm = document.getElementById("myForm");
     const formData = new FormData(myForm);
     const newForm = {
@@ -18,7 +20,10 @@ function General() {
       email: formData.get("user_num"),
     };
     setForm(newForm);
+    setSubmitted(true);
   };
+
+  const isSubmitted = submitted == true;
 
   return (
     <>
@@ -68,5 +73,3 @@ function General() {
 export default General;
 
 //Add a conditional statement - if submitted show edit button
-//STATE
-//Track status of whether form has been submitted
