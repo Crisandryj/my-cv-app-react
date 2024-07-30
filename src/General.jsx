@@ -23,7 +23,42 @@ function General() {
     setSubmitted(true);
   };
 
-  const isSubmitted = submitted == true;
+  //copied submit for the moment
+  const onEdit = (e) => {
+    e.preventDefault();
+    const myForm = document.getElementById("myForm");
+    const formData = new FormData(myForm);
+    const newForm = {
+      name: formData.get("user_name"),
+      email: formData.get("user_email"),
+      email: formData.get("user_num"),
+    };
+    setForm(newForm);
+    setSubmitted(true);
+  };
+
+  function EditButton() {
+    return (
+      <button type="submit" onClick={onEdit}>
+        Edit
+      </button>
+    );
+  }
+  function SubmitButton() {
+    return (
+      <button type="submit" onClick={onSubmit}>
+        Submit
+      </button>
+    );
+  }
+  //Add a conditional statement - if submitted show edit button
+  function ClickButton() {
+    if (submitted == true) {
+      return <EditButton />;
+    } else {
+      return <SubmitButton />;
+    }
+  }
 
   return (
     <>
@@ -59,9 +94,7 @@ function General() {
               />
             </li>
             <li className="button">
-              <button type="submit" onClick={onSubmit}>
-                Submit
-              </button>
+              <ClickButton />
             </li>
           </ul>
         </fieldset>
@@ -71,5 +104,3 @@ function General() {
 }
 
 export default General;
-
-//Add a conditional statement - if submitted show edit button
