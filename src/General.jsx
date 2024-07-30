@@ -1,22 +1,39 @@
 import { useState } from "react";
 
 function General() {
-  const [status, setStatus] = useState("typing");
+  const [submitted, setSubmitted] = useState(false);
+  //Save form inputs in object: Name,Email and Phone Number
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    number: "",
+    name: "Enter Name",
+    email: "email@email.com",
+    number: "7185555555",
   });
+
+  const onSubmit = () => {
+    const myForm = document.getElementById("myForm");
+    const formData = new FormData(myForm);
+    const newForm = {
+      name: formData.get("user_name"),
+      email: formData.get("user_email"),
+      email: formData.get("user_num"),
+    };
+    setForm(newForm);
+  };
 
   return (
     <>
-      <form action="">
+      <form action="" id="myForm">
         <fieldset>
           <legend>General</legend>
           <ul>
             <li>
               <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="user_name" value={form.name} />
+              <input
+                type="text"
+                id="name"
+                name="user_name"
+                defaultValue={form.name}
+              />
             </li>
             <li>
               <label htmlFor="mail">Email:</label>
@@ -24,7 +41,7 @@ function General() {
                 type="email"
                 id="mail"
                 name="user_email"
-                value={form.email}
+                defaultValue={form.email}
               />
             </li>
             <li>
@@ -33,11 +50,13 @@ function General() {
                 type="tel"
                 id="number"
                 name="user_num"
-                value={form.number}
+                defaultValue={form.number}
               />
             </li>
             <li className="button">
-              <button type="submit">Submit</button>
+              <button type="submit" onClick={onSubmit}>
+                Submit
+              </button>
             </li>
           </ul>
         </fieldset>
@@ -50,5 +69,4 @@ export default General;
 
 //Add a conditional statement - if submitted show edit button
 //STATE
-//Track status of wheter form has been submitted
-//Save form inputs in object: Name,Email and Phone Number
+//Track status of whether form has been submitted
