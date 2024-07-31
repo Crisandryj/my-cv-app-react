@@ -52,6 +52,7 @@ function General() {
       return <SubmitButton />;
     }
   }
+  //on submit change to listed info without edit option
   if (!submitted) {
     return (
       <>
@@ -114,5 +115,3 @@ function General() {
 }
 
 export default General;
-
-//on submit change to listed info without edit option
