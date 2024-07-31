@@ -17,7 +17,7 @@ function General() {
     const newForm = {
       name: formData.get("user_name"),
       email: formData.get("user_email"),
-      email: formData.get("user_num"),
+      number: formData.get("user_num"),
     };
     setForm(newForm);
     setSubmitted(true);
