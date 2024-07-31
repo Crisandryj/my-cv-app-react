@@ -12,7 +12,7 @@ function General() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const myForm = document.getElementById("myForm");
+    const myForm = document.getElementById("myGenForm");
     const formData = new FormData(myForm);
     const newForm = {
       name: formData.get("user_name"),
@@ -56,7 +56,7 @@ function General() {
   if (!submitted) {
     return (
       <>
-        <form action="" id="myForm">
+        <form action="" id="myGenForm">
           <fieldset>
             <legend>General</legend>
             <ul>

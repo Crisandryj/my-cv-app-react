@@ -12,7 +12,7 @@ function Education() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const myForm = document.getElementById("myForm");
+    const myForm = document.getElementById("myEdForm");
     const formData = new FormData(myForm);
     const newForm = {
       schoolName: formData.get("user_school"),
@@ -56,7 +56,7 @@ function Education() {
   if (!submitted) {
     return (
       <>
-        <form action="" id="myForm">
+        <form action="" id="myEdForm">
           <fieldset>
             <legend>Education</legend>
             <ul>
