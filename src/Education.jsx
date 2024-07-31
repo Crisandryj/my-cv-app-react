@@ -5,9 +5,9 @@ function Education() {
   const [submitted, setSubmitted] = useState(false);
   //Save form inputs in object: Name,Email and Phone Number
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    number: "",
+    schoolName: "",
+    study: "",
+    date: "",
   });
 
   const onSubmit = (e) => {
@@ -15,9 +15,9 @@ function Education() {
     const myForm = document.getElementById("myForm");
     const formData = new FormData(myForm);
     const newForm = {
-      name: formData.get("user_name"),
-      email: formData.get("user_email"),
-      number: formData.get("user_num"),
+      schoolName: formData.get("user_school"),
+      study: formData.get("user_study"),
+      date: formData.get("user_date"),
     };
     setForm(newForm);
     setSubmitted(true);
@@ -58,33 +58,33 @@ function Education() {
       <>
         <form action="" id="myForm">
           <fieldset>
-            <legend>General</legend>
+            <legend>Education</legend>
             <ul>
               <li>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="school">School:</label>
                 <input
                   type="text"
-                  id="name"
-                  name="user_name"
-                  defaultValue={form.name}
+                  id="school"
+                  name="user_school"
+                  defaultValue={form.schoolName}
                 />
               </li>
               <li>
-                <label htmlFor="mail">Email:</label>
+                <label htmlFor="study">Study:</label>
                 <input
-                  type="email"
-                  id="mail"
-                  name="user_email"
-                  defaultValue={form.email}
+                  type="text"
+                  id="study"
+                  name="user_study"
+                  defaultValue={form.study}
                 />
               </li>
               <li>
-                <label htmlFor="number">Number:</label>
+                <label htmlFor="date">Date:</label>
                 <input
-                  type="tel"
-                  id="number"
-                  name="user_num"
-                  defaultValue={form.number}
+                  type="date"
+                  id="date"
+                  name="user_date"
+                  defaultValue={form.date}
                 />
               </li>
               <li className="button">
@@ -99,11 +99,11 @@ function Education() {
     return (
       <>
         <fieldset>
-          <legend>General</legend>
+          <legend>Education</legend>
           <ul>
-            <li>{form.name}</li>
-            <li>{form.email}</li>
-            <li>{form.number}</li>
+            <li>{form.schoolName}</li>
+            <li>{form.study}</li>
+            <li>{form.date}</li>
             <li className="button">
               <ClickButton />
             </li>
