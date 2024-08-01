@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Education() {
+function Education(onClick) {
   //Track status of whether form has been submitted
   const [submitted, setSubmitted] = useState(false);
   //Save form inputs in object: Name,Email and Phone Number
@@ -89,6 +89,9 @@ function Education() {
               </li>
               <li className="button">
                 <ClickButton />
+              </li>
+              <li className="addButton">
+                <button onClick={() => onClick}>+</button>
               </li>
             </ul>
           </fieldset>
