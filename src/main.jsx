@@ -8,18 +8,23 @@ import Experience from "./Experience.jsx";
 
 const onClick = (e) => {
   e.preventDefault();
-  const [stack, setStack] = useState([]);
-  const newEd = <Education />;
-  setStack([...stack, newEd]);
-  <EducationMulitple stack={stack} />;
-  console.log(stack);
+  <EducationMulitple />;
 };
 
-function EducationMulitple(stack) {
-  if (stack.length > 0) {
-    console.log("go");
-    return stack.map((x) => x);
-  }
+function EducationMulitple() {
+  const [stack, setStack] = useState([1, 2]);
+  const newEd = <Education />;
+  setStack([...stack, newEd]);
+
+  return (
+    <>
+      <h1>length:{stack.length}</h1>
+    </>
+  );
+  // if (stack.length > 0) {
+  //   console.log("go");
+  //   return stack.map((x) => x);
+  // }
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
