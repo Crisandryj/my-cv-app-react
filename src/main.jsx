@@ -8,14 +8,13 @@ import Experience from "./Experience.jsx";
 
 const onClick = (e) => {
   e.preventDefault();
-  <EducationMulitple />;
+  const [stack, setStack] = useState([{ src: <Education /> }]);
+  const newEd = { src: <Education /> };
+  setStack([...stack, newEd]);
+  <EducationMulitple stack={stack} />;
 };
 
-function EducationMulitple() {
-  const [stack, setStack] = useState([1, 2]);
-  const newEd = <Education />;
-  setStack([...stack, newEd]);
-
+function EducationMulitple(stack) {
   return (
     <>
       <h1>length:{stack.length}</h1>
