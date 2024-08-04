@@ -90,9 +90,7 @@ function Education(onClick) {
               <li className="button">
                 <ClickButton />
               </li>
-              <li className="addButton">
-                <button onClick={() => onClick}>+</button>
-              </li>
+              <li className="addButton"></li>
             </ul>
           </fieldset>
         </form>
