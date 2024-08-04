@@ -15,12 +15,10 @@ function Form() {
     <>
       <General />
       <Education />
+      {stack.map((x) => x.src)}
+      <button onClick={onClick}>+</button>
       <Experience />
     </>
-    // if (stack.length > 0) {
-    //   console.log("go");
-    //   return stack.map((x) => x);
-    // }
   );
 }
 
