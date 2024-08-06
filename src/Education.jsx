@@ -17,7 +17,8 @@ function Education(key) {
     const newForm = {
       schoolName: formData.get("user_school"),
       study: formData.get("user_study"),
-      date: formData.get("user_date"),
+      dateStart: formData.get("user_dateStart"),
+      dateEnd: formData.get("user_dateEnd"),
     };
     setForm(newForm);
     setSubmitted(true);
@@ -79,12 +80,21 @@ function Education(key) {
                 />
               </li>
               <li>
-                <label htmlFor="date">Date:</label>
+                <label htmlFor="dateStart">Start Date:</label>
                 <input
                   type="date"
-                  id="date"
-                  name="user_date"
-                  defaultValue={form.date}
+                  id="dateStart"
+                  name="user_dateStart"
+                  defaultValue={form.dateStart}
+                />
+              </li>
+              <li>
+                <label htmlFor="dateEnd">End Date:</label>
+                <input
+                  type="date"
+                  id="dateEnd"
+                  name="user_dateEnd"
+                  defaultValue={form.dateEnd}
                 />
               </li>
               <li className="button">
@@ -102,9 +112,10 @@ function Education(key) {
         <fieldset>
           <legend>Education</legend>
           <ul>
-            <li>{form.schoolName}</li>
-            <li>{form.study}</li>
-            <li>{form.date}</li>
+            <li>School: {form.schoolName}</li>
+            <li>Study: {form.study}</li>
+            <li>Start Date: {form.dateStart}</li>
+            <li>End Date: {form.dateEnd}</li>
             <li className="button">
               <ClickButton />
             </li>

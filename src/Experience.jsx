@@ -81,7 +81,7 @@ function Experience() {
                 />
               </li>
               <li>
-                <label htmlFor="dateStart">Date Start:</label>
+                <label htmlFor="dateStart">Start Date:</label>
                 <input
                   type="date"
                   id="dateStart"
@@ -90,7 +90,7 @@ function Experience() {
                 />
               </li>
               <li>
-                <label htmlFor="dateEnd">Date End:</label>
+                <label htmlFor="dateEnd">End Date:</label>
                 <input
                   type="date"
                   id="dateEnd"

@@ -32,6 +32,7 @@ function Form() {
 
   return (
     <div>
+      <h1>CV Application</h1>
       <General />
       <Education key={uuidv4()} />
       {edStack.map((comp) => comp.src)}
