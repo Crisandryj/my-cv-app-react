@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Education(onClick) {
+function Education(key) {
   //Track status of whether form has been submitted
   const [submitted, setSubmitted] = useState(false);
   //Save form inputs in object: Name,Email and Phone Number
