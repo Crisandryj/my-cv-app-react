@@ -6,13 +6,10 @@ import React, { useState } from "react";
 function Form() {
   const [stack, setStack] = useState([]);
 
-  let index = 0;
   const onClick = (e) => {
     e.preventDefault();
-    const newEd = { src: <Education key={index} /> };
+    const newEd = { src: <Education /> };
     setStack([...stack, newEd]);
-    index = index + 1;
-    console.log(index);
   };
   return (
     <>
