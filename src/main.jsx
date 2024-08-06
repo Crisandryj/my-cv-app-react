@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import Form from "./Form.jsx";
+import Form from "./Components/Form.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
