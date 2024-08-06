@@ -5,28 +5,42 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function Form() {
-  const [stack, setStack] = useState([]);
+  const [edStack, setedStack] = useState([]);
+  const [expStack, setexpStack] = useState([]);
+
   const onClickAdd = (e) => {
     e.preventDefault();
-    let index = 0;
     const newEd = { src: <Education key={uuidv4()} /> };
-    setStack([...stack, newEd]);
+    setedStack([...edStack, newEd]);
   };
 
   const onClickDelete = (e) => {
     e.preventDefault();
-    setStack([...stack].splice(1));
-    console.log(stack);
+    setedStack([...edStack].splice(1));
+  };
+
+  const onClickAddExp = (e) => {
+    e.preventDefault();
+    const newExp = { src: <Experience key={uuidv4()} /> };
+    setexpStack([...expStack, newExp]);
+  };
+
+  const onClickDeleteExp = (e) => {
+    e.preventDefault();
+    setexpStack([...expStack].splice(1));
   };
 
   return (
     <div>
       <General />
       <Education key={uuidv4()} />
-      {stack.map((comp) => comp.src)}
+      {edStack.map((comp) => comp.src)}
       <button onClick={onClickAdd}>+</button>
       <button onClick={onClickDelete}>-</button>
       <Experience />
+      {expStack.map((comp) => comp.src)}
+      <button onClick={onClickAddExp}>+</button>
+      <button onClick={onClickDeleteExp}>-</button>
     </div>
   );
 }
