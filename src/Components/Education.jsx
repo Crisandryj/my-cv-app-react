@@ -30,7 +30,7 @@ function Education(key) {
 
     setSubmitted(false);
   };
-
+  // Go back to orginal form when clicked
   function EditButton() {
     return (
       <button type="submit" onClick={onEdit}>
